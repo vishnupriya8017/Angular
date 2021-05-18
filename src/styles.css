@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3AAFA9;
+    height: 100vh;
+    
+  }
+  
+   .container .row {
+    margin-top: 100px;
+    max-width: 1000px;
+    height: 320px;
+    border: 1px solid #3AAFA9;
+    background-color: #3AAFA9;
+    padding: 10px;
+    margin-top: 5px;
+    padding-left: 20px;
+    
+  }
+  
+  .textcolor{
+    color: black;
+  }
+  .detail{
+    padding-left: 560px;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 26px;
+    font-size: 16px;
+}
+.login{
+  padding-left: 240px;
+  
+}
+.fg{
+  position: relative;
+  left: 195px;
+  top: 40px;
+}
+
+.acnt{
+  position: relative;
+  left: 200px;
+  top: 100px;
+  width: 280px;
+  height: 32px;
+}
+.usn{
+  position: relative;
+  left: 200px;
+  top: 110px;
+  width: 280px;
+  height: 32px;
+
+}
+.paswd{
+  position: relative;
+  left:200px;
+  top: 120px;
+  width: 280px;
+  height: 32px;
+}
+.lgin{
+  position: relative;
+  left:295px;
+  top: 150px;
+}
+.welcome{
+  font-size: 35px;
+  position: relative;
+  left: 510px;
+  top: 40px;
+}
+.detailbtn{
+  position: relative;
+  top: 89px;
+  left: 400px;
+}
+.tabnav{
+  width: 540px;
+  
+}
+.myacc{
+  position: relative;
+  right: 140px;
+  top: 40px;
+}
+.tabdet{
+  position: relative;
+  left: 180px;
+}
+.formcnt{
+  width: 300px;
+  position: relative;
+  right: 300px;
+}
+.withform{
+  position: relative;
+  top: 60px;
+}
+.accform{
+  position: relative;
+  top: 40px;
+  
+}
