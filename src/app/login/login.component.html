@@ -26,12 +26,12 @@
         <div class="col-4">
             <h3 class="text-center textcolor fg ">𝐖𝐄𝐋𝐂𝐎𝐌𝐄 to Life Bank <br><h5>{{aim}}</h5></h3>
             <label class="acnt" style="color: black;font-size: 15px;">Account Number</label>
-            <input type="text"  class="acnt" [value]="acno" #accno id="acno" >
+            <input type="text"  class="acnt" [value]="acno" [(ngModel)]="acno" id="acno" >
             <label for="" class="usn" style="color: black;font-size: 15px;">Username</label>
             <input type="text" class="usn" name="" id="uname" >
             <label class="paswd" style="color: black;font-size: 15px;">Password</label>
-            <input type="password"  class="paswd" #pswd id="pwd" >
-            <button class="btn btn-success lgin" style="background-color: #17252a;color: white;"  (click)="login(accno,pswd)">LOGIN</button>
+            <input type="password"  class="paswd" [(ngModel)]="pswd" id="pwd" >
+            <button class="btn btn-success lgin" style="background-color: #17252a;color: white;"  (click)="login()">LOGIN</button>
 
         </div>
         <div class="col-4"></div>

@@ -38,10 +38,10 @@ export class LoginComponent implements OnInit {
     
   //}
 
-  login(a:any,p:any){
+  login(){
     
-    var acno=a.value;
-    var pswd=p.value;
+    var acno=this.acno;
+    var pswd=this.pswd;
     let users = this.accountDetails
     if (acno in users) {
         if ( pswd == users[acno]["password"]) {
