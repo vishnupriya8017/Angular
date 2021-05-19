@@ -66,6 +66,16 @@ body {
   left:295px;
   top: 150px;
 }
+.nbtn{
+  position: relative;
+  left:175px;
+  top: 250px;
+
+}
+.rbtn{
+  position: relative;
+  top: 145px;
+}
 .welcome{
   font-size: 35px;
   position: relative;
