@@ -74,7 +74,13 @@ body {
 }
 .rbtn{
   position: relative;
-  top: 145px;
+  top: 175px;
+}
+.reglink{
+  position: relative;
+  top: 130px;
+  right: 50px;
+  color: black;
 }
 .welcome{
   font-size: 35px;
@@ -112,5 +118,11 @@ body {
 .accform{
   position: relative;
   top: 40px;
+  
+}
+.wdform{
+  background-color: #008b8b;
+  border-radius: 30px;
+  width: 490px;
   
 }

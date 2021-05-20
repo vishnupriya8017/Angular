@@ -25,15 +25,16 @@
         <div class="col-4"></div>
         <div class="col-4">
             <h3 class="text-center textcolor fg ">𝐖𝐄𝐋𝐂𝐎𝐌𝐄 to Life Bank <br><h5>{{aim}}</h5></h3>
+            <form (ngSubmit)='login()'>
             <label class="acnt" style="color: black;font-size: 15px;">Account Number</label>
-            <input type="text"  class="acnt" [value]="acno" [(ngModel)]="acno" id="acno" >
+            <input type="text"  class="acnt" [value]="acno" name="accountno" [(ngModel)]="acno" id="acno" >
             <label for="" class="usn" style="color: black;font-size: 15px;">Username</label>
             <input type="text" class="usn" name="" id="uname" >
             <label class="paswd" style="color: black;font-size: 15px;">Password</label>
-            <input type="password"  class="paswd" [(ngModel)]="pswd" id="pwd" >
-            <button class="btn btn-success lgin" style="background-color: #17252a;color: white;"  (click)="login()">LOGIN</button>
+            <input type="password"  class="paswd" name="pasword" [(ngModel)]="pswd" id="pwd" >
+            <button type="submit" class="btn btn-success lgin" style="background-color: #17252a;color: white;">LOGIN</button>
             <button class="btn nbtn" style="background-color: darkblue;color:white;" (click)="register()" >Create New Account</button>
-
+            </form>
         </div>
         <div class="col-4"></div>
     </div>
