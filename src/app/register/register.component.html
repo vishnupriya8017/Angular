@@ -25,15 +25,24 @@
         <div class="col-4"></div>
         <div class="col-4">
             <h3 class="text-center textcolor fg ">𝐖𝐄𝐋𝐂𝐎𝐌𝐄 to Life Bank <br><h5>Register Form</h5></h3>
-            <form (ngSubmit)='register()'>
+            <form [formGroup]="registerForm" (ngSubmit)='register()'>
+
             <label class="acnt" style="color: black;font-size: 15px;">Account Number</label>
-            <input type="text"  class="acnt" [value]="acno" name="accountno" [(ngModel)]="acno" id="acno" >
+            <input type="text"  class="acnt" [value]="acno" name="accountno" formControlName="acno" id="acno" >
+
+            <div *ngIf="(registerForm.get('acno')?.touched || registerForm.get('acno')?.dirty) && registerForm.get('acno')?.errors" class="error">Invalid Account Number</div>
+
             <label for="" class="usn" style="color: black;font-size: 15px;">Username</label>
-            <input type="text" class="usn" name="" [(ngModel)]="pswd" id="uname" >
+            <input type="text" class="usn" name="" formControlName="uname" id="uname" >
+
+            <div *ngIf="(registerForm.get('uname')?.touched || registerForm.get('uname')?.dirty) && registerForm.get('uname')?.errors" class="error">Invalid Username</div>
+
             <label class="paswd" style="color: black;font-size: 15px;">Password</label>
-            <input type="password"  class="paswd" name="pasword" [(ngModel)]="pswd" id="pwd" >
+            <input type="password"  class="paswd" name="pasword" formControlName="pswd" id="pwd" >
+
+            <div *ngIf="(registerForm.get('pswd')?.touched || registerForm.get('pswd')?.dirty) && registerForm.get('pswd')?.errors" class="error1">Invalid Password</div>
             
-            <button type="submit" class="btn nbtn rbtn" style="background-color: darkblue;color:white; margin-left: 80px; " >Create New Account</button>
+            <button type="submit" class="btn nbtn rbtn" style="background-color: #004b55;color:white; margin-left: 80px; " >Create New Account</button>
             <a class="reglink" routerLink="" >LOGIN</a>
             </form>
         </div>

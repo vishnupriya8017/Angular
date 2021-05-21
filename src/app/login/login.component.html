@@ -25,15 +25,20 @@
         <div class="col-4"></div>
         <div class="col-4">
             <h3 class="text-center textcolor fg ">𝐖𝐄𝐋𝐂𝐎𝐌𝐄 to Life Bank <br><h5>{{aim}}</h5></h3>
-            <form (ngSubmit)='login()'>
+            <form [formGroup]="loginForm" (ngSubmit)='login()'>
+
             <label class="acnt" style="color: black;font-size: 15px;">Account Number</label>
-            <input type="text"  class="acnt" [value]="acno" name="accountno" [(ngModel)]="acno" id="acno" >
-            <label for="" class="usn" style="color: black;font-size: 15px;">Username</label>
-            <input type="text" class="usn" name="" id="uname" >
+            <input type="text"  class="acnt" [value]="acno" name="accountno" formControlName="acno" id="acno" >
+
+            <div *ngIf="(loginForm.get('acno')?.touched || loginForm.get('acno')?.dirty) && loginForm.get('acno')?.errors" class="error">Invalid Account Number</div>
+
             <label class="paswd" style="color: black;font-size: 15px;">Password</label>
-            <input type="password"  class="paswd" name="pasword" [(ngModel)]="pswd" id="pwd" >
+            <input type="password"  class="paswd" name="pasword" formControlName="pswd" id="pwd" >
+
+            <div *ngIf="(loginForm.get('pswd')?.touched || loginForm.get('pswd')?.dirty) && loginForm.get('pswd')?.errors" class="error1">Invalid Password</div>
+
             <button type="submit" class="btn btn-success lgin" style="background-color: #17252a;color: white;">LOGIN</button>
-            <button class="btn nbtn" style="background-color: darkblue;color:white;" (click)="register()" >Create New Account</button>
+            <button class="btn nbtn" style="background-color:#004b55; color:white;" (click)="register()" >Create New Account</button>
             </form>
         </div>
         <div class="col-4"></div>

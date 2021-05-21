@@ -36,16 +36,23 @@
 </nav>
 
 <div class="container">
-  <h1>Welcome User....</h1>
+  <h1>Welcome {{user}}</h1>
   <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
       <div class="main wdform">
         <h4 style="padding-left: 160px;padding-top: 20px;">DEPOSIT FORM</h4><br>
-        <form (ngSubmit)="deposit()" style="margin-left: 150px;">
-          <input id="acnom" type="text" class="accol" name="accno" [(ngModel)]="dAccno" placeholder="Account Number"><br><br>
-          <input id="passw" type="text" class="pascol" name="pswd" [(ngModel)]="dPswd" placeholder="Password"><br><br>
-          <input id="amnt" type="text" class="amcol" name="amnt" [(ngModel)]="dAmount" placeholder="Amount"><br><br>
+        <form [formGroup]="depositForm" (ngSubmit)="deposit()" style="margin-left: 150px;">
+
+          <input id="acnom" type="text" class="accol" name="accno" formControlName="acno"  placeholder="Account Number"><br><br>
+          <div *ngIf="(depositForm.get('acno')?.touched || depositForm.get('acno')?.dirty) && depositForm.get('acno')?.errors" class="error">Invalid Account Number</div>
+
+          <input id="passw" type="text" class="pascol" name="pswd" formControlName="pswd" placeholder="Password"><br><br>
+          <div *ngIf="(depositForm.get('pswd')?.touched || depositForm.get('pswd')?.dirty) && depositForm.get('pswd')?.errors" class="error">Invalid Password</div>
+
+          <input id="amnt" type="text" class="amcol" name="amnt" formControlName="amount" placeholder="Amount"><br><br>
+          <div *ngIf="(depositForm.get('amount')?.touched || depositForm.get('amount')?.dirty) && depositForm.get('amount')?.errors" class="error">Invalid Amount</div>
+
           <input type="submit" value="DEPOSIT" class="btn btn-success " style="background-color: #17252a;color: white; margin-left: 50px;"><br><br>
         </form>
       </div>
@@ -61,10 +68,17 @@
     <div class="col-4">
       <div class="main wdform">
         <h4 style="padding-left: 135px; padding-top: 20px;">WITHDRAWAL FORM</h4><br>
-        <form (ngSubmit)="withdraw()" style="margin-left: 150px;" >
-          <input id="acnom" type="text" class="accol" name="accno" [(ngModel)]="wAccno" placeholder="Account Number"><br><br>
-          <input id="passw" type="text" class="pascol" name="pswd" [(ngModel)]="wPswd" placeholder="Password"><br><br>
-          <input id="amnt" type="text" class="amcol" name="amnt" [(ngModel)]="wAmount"  placeholder="Amount"><br><br>
+        <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()" style="margin-left: 150px;" >
+
+          <input id="acnom" type="text" class="accol" name="accno" formControlName="acno"   placeholder="Account Number"><br><br>
+          <div *ngIf="(withdrawForm.get('acno')?.touched || withdrawForm.get('acno')?.dirty) && withdrawForm.get('acno')?.errors" class="error">Invalid Account Number</div>
+
+          <input id="passw" type="text" class="pascol" name="pswd" formControlName="pswd" placeholder="Password"><br><br>
+          <div *ngIf="(withdrawForm.get('pswd')?.touched || withdrawForm.get('pswd')?.dirty) && withdrawForm.get('pswd')?.errors" class="error">Invalid Password</div>
+
+          <input id="amnt" type="text" class="amcol" name="amnt" formControlName="amount"  placeholder="Amount"><br><br>
+          <div *ngIf="(withdrawForm.get('amount')?.touched || withdrawForm.get('amount')?.dirty) && withdrawForm.get('amount')?.errors" class="error">Invalid Amount</div>
+
           <input type="submit" value="WITHDRAW" class="btn btn-success " style="background-color: #17252a;color: white; margin-left: 45px;"><br><br>
         </form>
       </div>
